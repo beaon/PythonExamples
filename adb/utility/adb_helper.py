@@ -36,8 +36,8 @@ class AdbHelper (object):
         """
         if 'sdkRoot' in opts:
             self.sdkRoot = opts.sdkRoot
-        elif "ANDROID_HOME" in os.environ:
-            self.sdkRoot = os.environ['ANDROID_HOME']
+        elif "ANDROID_SDK_HOME" in os.environ:
+            self.sdkRoot = os.environ['ANDROID_SDK_HOME']
         self.iswindows = is_windows()
         result,self.adb = self._checkaSdkBinarypresent('adb')
         if not result:
