@@ -82,15 +82,16 @@ class AdbHelper (object):
         platform_tools_binary =  self.sdkRoot + os.sep + "platform-tools" + os.sep + binaryName
         tools_binary = self.sdkRoot + os.sep + "tools" + os.sep + binaryName
         build_tools_path = self.sdkRoot + os.sep + "build-tools"
-        build_tools_binarys = [build_tools_path + os.sep + build_tools_dir + os.sep + binaryName for build_tools_dir in os.listdir(build_tools_path)]
+        #build_tools_binarys = [build_tools_path + os.sep + build_tools_dir + os.sep + binaryName for build_tools_dir in os.listdir(build_tools_path)]
         self.binarySearchPath.append(platform_tools_binary)
         self.binarySearchPath.append(tools_binary)
-        self.binarySearchPath += build_tools_binarys
+        #self.binarySearchPath += build_tools_binarys
         for bi in self.binarySearchPath:
             if os.path.exists(bi):
                 return True,bi
 
         raise   Exception("%s not found", binaryName)
+
     def shell(self, cmd, wait=True, stdout=subprocess.PIPE):
         return self.execshell("shell %s" % cmd, wait, stdout)
 
