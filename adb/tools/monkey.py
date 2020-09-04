@@ -3,8 +3,8 @@
 
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__))+"/../../")
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 from adb.utility import adb_helper
 from jinja2 import Template
