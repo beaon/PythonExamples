@@ -47,7 +47,7 @@ class Monkey(object):
             #检查monkey是否结束
             pid = self.adb.getPIDByName('com.android.commands.monkey')
             if len(pid)<=0:
-                print "no monkey start now.stop."
+                print("no monkey start now.stop.")
                 break
             result1, cpu = self.adb.getCpuUsage()
             result2, mem = self.adb.getMemFree()
@@ -86,7 +86,7 @@ def generateHtml():
     '''
     获取所有output，生成index.html
     '''
-    output_path = os.path.dirname(os.path.abspath(__file__))+"/../output/";
+    output_path = os.path.dirname(os.path.abspath(__file__))+"/../output/"
     files = [f for f in os.listdir(output_path) if  f.endswith('.html') and   f != 'index.html' and os.path.isfile(os.path.join(output_path, f))]
     template_file = os.path.dirname(os.path.abspath(__file__)) + "/../template/index.html"
     f = open(template_file)
